@@ -1,0 +1,23 @@
+========
+1-It is faster at removing elements from the middle of a list?
+Incorrect:
+Removing elements from the middle of an ArrayList is slower because it requires shifting all subsequent elements.
+In contrast, removing from a linked list can be faster as it involves adjusting pointers without shifting elements.
+
+========
+2-It takes up less memory than a linked list?
+Correct:
+An ArrayList generally uses less memory than a linked list because it has a contiguous array storage that requires less overhead
+per element compared to the multiple pointers (for next and previous nodes) used in a linked list.
+
+========
+3-It is harder to implement than a linked list?
+Incorrect:
+An ArrayList is generally considered simpler to implement than a linked list since it utilizes a dynamic array, while a linked list requires
+more effort to manage the nodes and pointers.
+
+========
+4-It is slower at retrieving elements at a particular location?
+Incorrect:
+An ArrayList provides constant-time access (O(1)) to elements at a specific index, making it faster to retrieve elements compared to a linked list,
+which requires traversal from the head to locate a node.

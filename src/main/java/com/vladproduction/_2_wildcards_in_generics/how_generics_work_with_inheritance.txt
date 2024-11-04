@@ -1,0 +1,24 @@
+In context of Java generics, especially when considering the terms "extends" and "super":
+
+    extends : consume
+This is often referred to as the "invariance" keyword in the context of generics, but more accurately, it indicates a bounded wild card.
+When you declare a method with a parameter of type List<? extends T>, you mean that the method can accept a list of T or any subclass of T.
+This is where "in" comes from — you can input (consume) any subtype of T, but you cannot add elements to that list unless they are of the specific type (or its subtype).
+Invariably, you can think of it in terms of "input."
+Example:
+public void printList(List<? extends Animal> animals) can take List<Dog>, List<Cat>, etc.
+
+    super: produce
+This indicates that the method can accept a List that is of the type T or any supertype of T. This is often referred to as "outvariance,"
+because it allows you to add or produce elements of the specified type T to the list. Thus, you can think of this in terms of "output."
+You can add items of a specified type or its subtypes, but you cannot read items from that list in a type-safe manner since you only know
+they are of type Object at the upper bound.
+Example:
+public void addList(List<? super Dog> dogs) allows you to add Dog objects or anything that is a subclass of Dog.
+
+In summary:
+
+* extends (invariance) = Allows for reading types (consuming), but restricts adding (producing).
+* super (outvariance) = Allows for adding types (producing), but restricts the ability to safely read types.
+
+These concepts are foundational for understanding how generics work with inheritance in Java.
